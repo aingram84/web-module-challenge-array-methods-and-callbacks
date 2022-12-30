@@ -95,13 +95,7 @@ function getWinnersByYear(fifaData, cbFinals, cbYears, cbWinners) {
     }
     return winArr;
 }
-    
-// get results from getFinals
-// get results from getYears
-// get results from getWinners
-// loop through getYears and for each index in both (gYear/gWin) fill in string literal and add that StrLit to winArr then return winArr
-// get results = assign results from cb to a variable
-
+   
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use the higher order function `getAverageGoals` to do the following: 
@@ -117,8 +111,12 @@ Use the higher order function `getAverageGoals` to do the following:
  
 */
 
-function getAverageGoals(/* code here */) {
-    /* code here */
+function getAverageGoals(finalGames) {
+    const avgGoals = finalGames;
+    const htGoals = avgGoals.reduce((total, game) => {
+        return total + game["Home Team Goals"] + game["Away Team Goals"];
+    }, 0);
+    return (htGoals / avgGoals.length).toFixed(2);
 }
 
 
